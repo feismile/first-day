@@ -1,0 +1,63 @@
+<template>
+<div class="body teacher-profile">
+  <div class="profile">
+    <div class="row survey">
+      <div class="col-md-3">
+        <div class="cell money">
+          <i class="fa fa-money"></i>
+          <span>我的收入</span>
+          <h5>￥11.11</h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="cell th">
+          <i class="fa fa-th"></i>
+          <span>课程数量</span>
+          <h5>12</h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="cell user">
+          <i class="fa fa-user"></i>
+          <span>用户数量</span>
+          <h5>236</h5>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="cell eye">
+          <i class="fa fa-eye"></i>
+          <span>浏览量</span>
+          <h5>22435</h5>
+        </div>
+      </div>
+    </div>
+    <div class="chart">
+      <div id="main" style="width: 600px;height:400px;"></div>
+    </div>
+  </div>
+</div>
+</template>
+
+<script>
+	// import axios from "axios"
+	export default {
+    created(){
+      // axios.get("http://api.circle.ink/v1/teachers",{
+      //  headers:{
+      //    "X-Access-Token":JSON.parse(window.localStorage.getItem("bxg-token")).token
+      //  }
+      // }).then(res=>{
+      //   console.log(res)
+      // })
+
+      this.$http.get("teachers").then(res=>{
+        console.log(res)
+      })
+    },
+		data(){
+			return{}
+		}
+	}
+</script>
+
+<style></style>
